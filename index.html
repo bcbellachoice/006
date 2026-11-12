@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="pt-BR" data-tema="crepusculo">
+<html lang="pt-BR" data-tema="sage">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Base mate de alta cobertura | BC Bella Choice</title>
-<meta name="description" content="Base líquida mate de alta cobertura e textura leve, resistente à água e vegana. Cor 03 Francisca, 30 ml.">
+<meta name="description" content="Base líquida mate de alta cobertura e textura leve, resistente à água e vegana. 30 ml, em 5 cores.">
 <meta name="theme-color" content="#f8f2ec">
 <meta property="og:title" content="Pele uniforme até o fim do dia, sem sensação de máscara">
-<meta property="og:description" content="Base mate de alta cobertura, cor 03 Francisca. Divulgação BC Bella Choice.">
+<meta property="og:description" content="Base mate de alta cobertura em 5 cores. Divulgação BC Bella Choice.">
 <meta property="og:image" content="imagem1.jpeg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%235a6b50'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='13' fill='%23f6f1e7' text-anchor='middle'%3EBC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +23,8 @@ window.BELLA_CONFIG = {
   /* ID do pixel da Meta. Vazio = nada e enviado. */
   pixelId: "",
 
-  /* Paleta: "sage" (padrao), "vinho" ou "crepusculo" */
-  tema: "crepusculo",
+  /* Paleta: "sage", "vinho", "crepusculo", "grafite" (preto), "rubi" (vermelho), "jade" (verde) "lavanda" (lilas) "rose" (rosa) "pink" (pink e prata) "perola" (branco e dourado) ou "oceano" (azul) */
+  tema: "crepusculo",              /* paleta usada quando a cor escolhida nao tem "tema" */
 
   /* Marca e contato */
   instagram: "https://instagram.com/bcbellachoice",
@@ -33,7 +33,26 @@ window.BELLA_CONFIG = {
   linkAviso: "https://bcbellachoice.github.io/aviso-e-privacidade",
 
   /* ---- Produto ---- */
-  linkCompra: "https://pay.kaiross.com.br/mpr0623zBPXm",  /* link de venda da Kaiross */
+  /* ---- Cores ----
+     Cada cor tem o seu link da Kaiross e as suas fotos no carrossel.
+     - id: nome curto, igual ao data-cor="..." das fotos. Tambem abre a pagina ja na cor: https://bcbellachoice.github.io/P04?cor=ana
+     - nome: como aparece para o cliente
+     - amostra: cor da bolinha (uma cor, ou duas para produto de duas cores)
+     - tema: paleta da pagina com essa cor ("" = usa o tema de cima)
+     - link: link de venda da Kaiross. Vazio ("") = a cor some da pagina.
+     - outros campos (texto, ficha...) preenchem os textos marcados com data-var no HTML.
+     A primeira cor (ou a de corInicial) e a que abre por padrao. */
+  cores: [
+    { id:"ana", nome:"02 Ana", amostra:["#efcfa4"], tema:"", link:"https://pay.kaiross.com.br/am48re44PZID" },
+    { id:"francisca", nome:"03 Francisca", amostra:["#ebc194"], tema:"", link:"https://pay.kaiross.com.br/mpr0623zBPXm" },
+    { id:"antonia", nome:"04 Antônia", amostra:["#e2b27e"], tema:"", link:"https://pay.kaiross.com.br/cK8VH6J0iHCQ" },
+    { id:"adriana", nome:"05 Adriana", amostra:["#d9a66c"], tema:"", link:"https://pay.kaiross.com.br/atJCjORewnml" },
+    { id:"juliana", nome:"06 Juliana", amostra:["#cc9558"], tema:"", link:"https://pay.kaiross.com.br/Hsem9wYN3o5I" }
+  ],
+  corInicial: "francisca",
+  rotuloCor: "Cor",
+
+  linkCompra: "",             /* so e usado se a lista de cores estiver vazia */
   preco: 59.90,               /* precisa ser o MESMO valor salvo na Kaiross */
   precoDe: 0,                 /* preco "de" riscado; 0 = nao mostra */
 
@@ -76,6 +95,38 @@ window.BELLA_CONFIG = {
   --fundo:#faf7f2; --superficie:#ffffff; --texto:#2e2124; --suave:#6b5a5e;
   --marca:#7b2d3b; --marca-forte:#5c1f2b; --marca-clara:#f2e3e5; --detalhe:#b08d57; --borda:#e5dad2;
 }
+[data-tema="grafite"] {
+  --fundo:#f4f2ef; --superficie:#fbfaf8; --texto:#1f1f1f; --suave:#5c5a57;
+  --marca:#3a3a3a; --marca-forte:#1c1c1c; --marca-clara:#e6e3de; --detalhe:#b8955a; --borda:#dcd8d1;
+}
+[data-tema="rubi"] {
+  --fundo:#fbf4f2; --superficie:#fffaf9; --texto:#2d1f1f; --suave:#6d5555;
+  --marca:#b3262e; --marca-forte:#8e1b22; --marca-clara:#f6dfdf; --detalhe:#c9a27a; --borda:#ecd9d6;
+}
+[data-tema="jade"] {
+  --fundo:#f2f6f3; --superficie:#fafcfa; --texto:#1d2a24; --suave:#55665e;
+  --marca:#2f7a5a; --marca-forte:#1f5c43; --marca-clara:#dcebe3; --detalhe:#b89b6a; --borda:#d5e2da;
+}
+[data-tema="lavanda"] {
+  --fundo:#f7f4fa; --superficie:#fdfbfe; --texto:#2a2433; --suave:#645b70;
+  --marca:#8a6fb0; --marca-forte:#6b5191; --marca-clara:#ece4f5; --detalhe:#c4a07a; --borda:#e2d9ec;
+}
+[data-tema="rose"] {
+  --fundo:#fbf3f5; --superficie:#fffafb; --texto:#33232a; --suave:#6f5a62;
+  --marca:#c0577a; --marca-forte:#9c3d5e; --marca-clara:#f7e1e8; --detalhe:#c4a07a; --borda:#efdbe2;
+}
+[data-tema="pink"] {
+  --fundo:#fbf4f8; --superficie:#fffafd; --texto:#2f2129; --suave:#6c5964;
+  --marca:#c2306f; --marca-forte:#9b2257; --marca-clara:#f8dceb; --detalhe:#9aa0a6; --borda:#eed8e3;
+}
+[data-tema="perola"] {
+  --fundo:#faf8f4; --superficie:#ffffff; --texto:#2b2620; --suave:#6a6258;
+  --marca:#b08d57; --marca-forte:#8a6a38; --marca-clara:#f1e8d8; --detalhe:#c9a96e; --borda:#e8e0d2;
+}
+[data-tema="oceano"] {
+  --fundo:#f3f6fa; --superficie:#fbfcfe; --texto:#1d2533; --suave:#57627a;
+  --marca:#3b5f99; --marca-forte:#284577; --marca-clara:#e0e8f4; --detalhe:#b89b6a; --borda:#d8e0ec;
+}
 [data-tema="crepusculo"] {
   --fundo:#f8f2ec; --superficie:#fffaf6; --texto:#33282a; --suave:#6e5f60;
   --marca:#a0605e; --marca-forte:#7c4544; --marca-clara:#f2e0da; --detalhe:#8b7aa8; --borda:#e6d8cc;
@@ -114,12 +165,25 @@ h1, h2 { font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif; font-
 .slide.faltando img, .slide.faltando video { visibility:hidden; }
 .pontos { position:absolute; left:0; right:0; bottom:12px; display:flex; justify-content:center; gap:7px; }
 .pontos button { width:7px; height:7px; padding:0; border:0; border-radius:99px; background:var(--superficie); opacity:.65; cursor:pointer; transition:width .3s, opacity .3s; }
-.pontos button[aria-current="true"] { width:22px; opacity:1; background:var(--marca-forte); }
+.pontos button { box-shadow:0 0 0 1px rgba(0,0,0,.18); }
+.pontos button[aria-current="true"] { width:22px; opacity:1; background:var(--detalhe); }
 .seta-car { position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px; border-radius:50%; border:0; background:var(--superficie); color:var(--texto); opacity:.85; display:grid; place-items:center; cursor:pointer; }
 .seta-car .icone { width:18px; height:18px; }
 .seta-car.ant { left:10px; } .seta-car.prox { right:10px; }
 .carrossel.um .pontos, .carrossel.um .seta-car { display:none; }
 .legenda { font-size:.72rem; color:var(--suave); margin:8px 2px 0; }
+
+/* ---------- Seletor de cor ---------- */
+.cores { margin:16px 0 0; }
+.caixa-oferta .cores { margin:18px 0 0; }
+.cores-rotulo { margin:0 0 9px; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--suave); }
+.cores-rotulo b { color:var(--texto); font-weight:500; text-transform:none; letter-spacing:0; font-size:.95rem; }
+.cores-lista { display:flex; flex-wrap:wrap; gap:8px; }
+.cor-opcao { display:inline-flex; align-items:center; gap:8px; padding:6px 13px 6px 7px; border-radius:99px; border:1px solid var(--borda); background:var(--superficie); color:var(--texto); font:inherit; font-size:.88rem; cursor:pointer; transition:border-color .2s, box-shadow .2s, background .2s; }
+.cor-opcao .amostra { width:22px; height:22px; border-radius:50%; flex:none; box-shadow:inset 0 0 0 1px rgba(0,0,0,.16); }
+.cor-opcao[aria-pressed="true"] { border-color:var(--marca); background:var(--marca-clara); box-shadow:0 0 0 1px var(--marca); }
+.cor-opcao:focus-visible { outline:2px solid var(--marca); outline-offset:2px; }
+.slide[hidden] { display:none; }
 
 /* ---------- Preco e botao ---------- */
 .preco { margin:22px 0 14px; display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 10px; }
@@ -250,30 +314,31 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
 
   <!-- 1. HEADLINE -->
   <section class="titulo">
-    <span class="etiqueta">Base mate de alta cobertura</span>
+    <span class="etiqueta">Base mate de alta cobertura · 5 cores</span>
     <h1>Pele uniforme até o fim do dia, sem sensação de máscara</h1>
   </section>
 
-  <!-- 2. CARROSSEL DE FOTOS E VIDEO
+  <!-- 2. CARROSSEL DE FOTOS
        - Coloque os arquivos na mesma pasta deste HTML, com estes nomes.
-       - Sem video? Apague do comentario "VIDEO" ate o comentario "FIM DO VIDEO".
-       - Mais fotos? Copie uma linha <div class="slide">...</div> e troque o nome do arquivo.
-       - O video toca sem som e o carrossel passa para a proxima foto quando ele termina. -->
+       - data-cor="..." diz de qual cor e a foto (o mesmo id da lista de cores no topo).
+         Foto sem data-cor aparece em todas as cores.
+       - Mais fotos? Copie uma linha <div class="slide"...>...</div> e troque o nome do arquivo.
+       - Video: <div class="slide" data-cor="ID"><video src="video1.mp4" muted playsinline preload="metadata"></video></div>
+       -->
   <div class="carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Fotos do produto">
     <div class="trilho">
 
-       <!-- FIM DO VIDEO -->
-
-      <div class="slide"><img src="imagem1.jpeg" alt="Base mate cobre tudo, cor 03 Francisca"></div>
-      <div class="slide"><img src="imagem2.jpeg" alt="Cor 03 Francisca aplicada na pele"></div>
-       <div class="slide"><img src="imagem3.jpeg" alt="Cor 03 Francisca aplicada na pele"></div>
-       <div class="slide"><img src="imagem4.jpeg" alt="Cor 03 Francisca aplicada na pele"></div>
-       <div class="slide"><img src="imagem5.jpeg" alt="Cor 03 Francisca aplicada na pele"></div>
-       
+      <!-- FOTOS DE TODAS AS CORES -->
+      <div class="slide"><img src="imagem1.jpeg" alt="Base mate cobre tudo"></div>
+      <div class="slide"><img src="imagem2.jpeg" alt="Base mate aplicada na pele" loading="lazy"></div>
+      <div class="slide"><img src="imagem3.jpeg" alt="Cartela de cores da base mate" loading="lazy"></div>
+      <div class="slide"><img src="imagem4.jpeg" alt="Textura da base mate" loading="lazy"></div>
+      <div class="slide"><img src="imagem5.jpeg" alt="Base mate cobre tudo, 30 ml" loading="lazy"></div>
 
     </div>
   </div>
   <p class="legenda">Imagens ilustrativas. A cor pode variar conforme a tela do seu aparelho.</p>
+  <div class="cores" data-cores></div>
 
   <!-- 3. SUBHEADLINE E BOTAO "VER OFERTA" (leva ate a caixa da oferta) -->
   <p class="sub">Uma base líquida que cobre manchas e vermelhidão já na primeira camada, mas espalha fácil e fica leve no rosto. Acabamento mate, resistente à água e vegana.</p>
@@ -309,7 +374,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       <li class="surge"><span class="num">3</span><div><b>Espalhe de dentro para fora</b><p>Use uma esponja úmida ou um pincel, com batidinhas leves, até chegar ao pescoço.</p></div></li>
       <li class="surge"><span class="num">4</span><div><b>Construa onde precisar</b><p>Manchas ou olheiras pedem mais? Passe uma camada fina só nesses pontos.</p></div></li>
     </ol>
-    <p class="nota-honesta surge">Antes de comprar: esta oferta é da cor <b>03 Francisca</b>, e não dá para escolher outra cor no checkout. Compare com as fotos e com a base que você já usa. A troca por cor errada depende das regras da plataforma de vendas.</p>
+    <p class="nota-honesta surge">Antes de comprar: escolha a sua cor aqui na página, antes de tocar no botão. Cada cor tem o seu link, e não dá para trocar a cor no checkout. Compare com a cartela das fotos e com a base que você já usa. A troca por cor errada depende das regras da plataforma de vendas.</p>
   </section>
 
   <!-- 6. OFERTA (unico botao de compra) -->
@@ -321,8 +386,9 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       <li><svg class="icone"><use href="#i-check"/></svg>Alta cobertura com textura leve</li>
       <li><svg class="icone"><use href="#i-check"/></svg>Acabamento mate de longa duração</li>
       <li><svg class="icone"><use href="#i-check"/></svg>Resistente à água e vegana</li>
-      <li><svg class="icone"><use href="#i-check"/></svg>Cor 03 Francisca, frasco de 30 ml</li>
+      <li><svg class="icone"><use href="#i-check"/></svg><span>Cor <span data-var="nome">03 Francisca</span>, 30 ml</span></li>
     </ul>
+    <div class="cores" data-cores></div>
     <div class="preco" data-preco></div>
     <p class="ancora">Como pouca quantidade já cobre, um frasco rende muitas maquiagens.</p>
     <a class="botao botao-oferta" href="#" data-comprar="oferta"><span data-texto-botao>Quero a minha base</span><svg class="icone"><use href="#i-seta"/></svg></a>
@@ -338,7 +404,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
     <table class="ficha">
       <tr><th>Marca</th><td>BRosa Beauty by Payot</td></tr>
       <tr><th>Tipo</th><td>Base líquida facial</td></tr>
-      <tr><th>Cor desta oferta</th><td>03 Francisca</td></tr>
+      <tr><th>Cores</th><td>02 Ana, 03 Francisca, 04 Antônia, 05 Adriana e 06 Juliana</td></tr>
       <tr><th>Acabamento</th><td>Mate</td></tr>
       <tr><th>Cobertura</th><td>Alta</td></tr>
       <tr><th>Resistente à água</th><td>Sim</td></tr>
@@ -360,8 +426,12 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
   <div class="grupo surge">Dúvidas frequentes</div>
   <section class="faq surge">
     <div class="item">
-      <button class="pergunta" type="button">Posso escolher outra cor?<svg class="icone"><use href="#i-mais"/></svg></button>
-      <div class="resposta"><div><p>Nesta oferta, não. A cor enviada é a 03 Francisca. Se ela não for o seu tom, acompanhe o nosso Instagram para saber quando outras cores estiverem disponíveis.</p></div></div>
+      <button class="pergunta" type="button">Quais cores posso escolher?<svg class="icone"><use href="#i-mais"/></svg></button>
+      <div class="resposta"><div><p>02 Ana, 03 Francisca, 04 Antônia, 05 Adriana e 06 Juliana. Escolha a cor aqui na página antes de tocar no botão: cada cor tem o seu link, e a cor não pode ser trocada depois, no checkout.</p></div></div>
+    </div>
+    <div class="item">
+      <button class="pergunta" type="button">Como sei qual é a minha cor?<svg class="icone"><use href="#i-mais"/></svg></button>
+      <div class="resposta"><div><p>Na cartela das fotos, os números menores são os tons mais claros e os maiores, os mais escuros. Compare com a base que você já usa. Na dúvida entre duas cores, escolha a que mais se parece com o tom do seu pescoço, que costuma deixar o resultado mais natural.</p></div></div>
     </div>
     <div class="item">
       <button class="pergunta" type="button">Serve para pele oleosa? E para pele seca?<svg class="icone"><use href="#i-mais"/></svg></button>
@@ -404,7 +474,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
 (function () {
   "use strict";
   var C = window.BELLA_CONFIG || {}, doc = document;
-  var temas = ["sage", "vinho", "crepusculo"];
+  var temas = ["sage", "vinho", "crepusculo", "grafite", "rubi", "jade", "lavanda", "rose", "pink", "perola", "oceano"];
   doc.documentElement.setAttribute("data-tema", temas.indexOf(C.tema) > -1 ? C.tema : "sage");
 
   function evento(nome, dados) {
@@ -417,6 +487,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
   var preco = +C.preco || 0;
   var gratis = String(C.frete).toLowerCase() !== "cliente";
   var previsto = +C.fretePrevisto || 0;
+  var cores = (C.cores || []).filter(function (v) { return v && v.id && v.link; }), corAtual = null;
 
   /* ---------- Preco e frete ---------- */
   var htmlFrete = gratis
@@ -441,7 +512,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
     } else a.href = C.linkCompra || "#";
     a.addEventListener("click", function () {
       evento(esgotado ? "clique esgotado #base-mate" : "clique comprar " + a.getAttribute("data-comprar") + " #base-mate",
-        { produto: "base mate cobre tudo 03 francisca", preco: preco });
+        { produto: "base mate alta cobertura", cor: corAtual ? corAtual.nome : "", preco: preco });
     });
   });
 
@@ -469,44 +540,58 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
     });
   });
 
-  /* ---------- Carrossel ---------- */
+  /* ---------- Carrossel (mostra so as fotos da cor escolhida) ---------- */
   var car = doc.getElementById("carrossel"), trilho = car.querySelector(".trilho");
-  var slides = $$(".slide", trilho), atual = 0, timer = null, parado = false;
-  slides.forEach(function (s) {
+  var todos = $$(".slide", trilho), slides = [], atual = 0, timer = null, parado = false;
+  todos.forEach(function (s) {
     var m = s.querySelector("img, video");
     if (!m) return;
     s.setAttribute("data-arquivo", m.getAttribute("src"));
     m.addEventListener("error", function () { s.classList.add("faltando"); if (slides[atual] === s) agenda(); });
-    if (m.tagName === "IMG") { m.decoding = "async"; if (s !== slides[0]) m.loading = "lazy"; }
-    if (m.tagName === "VIDEO") m.addEventListener("ended", function () { ir(atual + 1); });
+    if (m.tagName === "IMG") m.decoding = "async";
+    if (m.tagName === "VIDEO") m.addEventListener("ended", function () { if (slides[atual] === s) ir(atual + 1); });
   });
-  if (slides.length < 2) car.classList.add("um");
-  else {
-    var pontos = doc.createElement("div"); pontos.className = "pontos";
+  var pontos = doc.createElement("div"); pontos.className = "pontos"; car.appendChild(pontos);
+  ["ant", "prox"].forEach(function (lado) {
+    var b = doc.createElement("button"); b.type = "button"; b.className = "seta-car " + lado;
+    b.setAttribute("aria-label", lado === "ant" ? "Anterior" : "Próxima");
+    b.innerHTML = '<svg class="icone"><use href="#i-' + (lado === "ant" ? "esq" : "dir") + '"/></svg>';
+    b.onclick = function () { ir(atual + (lado === "ant" ? -1 : 1), true); }; car.appendChild(b);
+  });
+  /* monta o carrossel com as fotos da cor (fotos sem data-cor aparecem em todas) */
+  function montar(cor) {
+    var lista = todos.filter(function (s) {
+      var c = s.getAttribute("data-cor");
+      return !c || !cor || (" " + c + " ").indexOf(" " + cor + " ") > -1;
+    });
+    if (lista.length === slides.length && lista.every(function (s, i) { return s === slides[i]; })) return false;
+    slides = lista;
+    todos.forEach(function (s) {
+      s.hidden = slides.indexOf(s) < 0;
+      var v = s.querySelector("video"); if (v) v.pause();
+    });
+    slides.forEach(function (s, i) { var m = s.querySelector("img"); if (m) m.loading = i < 2 ? "eager" : "lazy"; });
+    car.classList.toggle("um", slides.length < 2);
+    pontos.innerHTML = "";
     slides.forEach(function (s, i) {
       var b = doc.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Mostrar item " + (i + 1));
       b.onclick = function () { ir(i, true); }; pontos.appendChild(b);
     });
-    car.appendChild(pontos);
-    ["ant", "prox"].forEach(function (lado) {
-      var b = doc.createElement("button"); b.type = "button"; b.className = "seta-car " + lado;
-      b.setAttribute("aria-label", lado === "ant" ? "Anterior" : "Próxima");
-      b.innerHTML = '<svg class="icone"><use href="#i-' + (lado === "ant" ? "esq" : "dir") + '"/></svg>';
-      b.onclick = function () { ir(atual + (lado === "ant" ? -1 : 1), true); }; car.appendChild(b);
-    });
+    trilho.style.transition = "none"; ir(0); void trilho.offsetWidth; trilho.style.transition = "";
+    return true;
   }
   function ir(i, manual) {
     if (!slides.length) return;
     atual = (i + slides.length) % slides.length;
     trilho.style.transform = "translateX(" + (-100 * atual) + "%)";
     $$(".pontos button", car).forEach(function (b, j) { b.setAttribute("aria-current", j === atual); });
-    slides.forEach(function (s, j) {
+    todos.forEach(function (s) {
       var v = s.querySelector("video");
       if (!v) return;
-      if (j === atual && !s.classList.contains("faltando")) { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      if (s === slides[atual] && !s.classList.contains("faltando")) { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
       else v.pause();
     });
-    if (manual) evento("ver foto #base-mate", { item: atual + 1 });
+    if (manual) evento("ver foto #base-mate", { item: atual + 1, cor: corAtual ? corAtual.nome : "" });
     agenda();
   }
   function agenda() {
@@ -534,7 +619,45 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       if (en[0].isIntersecting) { parado = false; agenda(); } else { parado = true; clearTimeout(timer); }
     }).observe(car);
   }
-  ir(0);
+
+  /* ---------- Seletor de cor ----------
+     Troca fotos, paleta, textos com data-var e o link do botao de compra.
+     Cor sem link na configuracao nao aparece. O endereco ?cor=id abre ja na cor. */
+  function escolher(v, manual) {
+    if (!v || corAtual === v) return;
+    corAtual = v;
+    if (v.tema && temas.indexOf(v.tema) > -1) doc.documentElement.setAttribute("data-tema", v.tema);
+    var meta = doc.querySelector('meta[name="theme-color"]'), fundo = getComputedStyle(doc.documentElement).getPropertyValue("--fundo").trim();
+    if (meta && fundo) meta.setAttribute("content", fundo);
+    $$("[data-var]").forEach(function (el) { var t = v[el.getAttribute("data-var")]; if (t != null) el.textContent = t; });
+    $$(".cor-opcao").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-id") === v.id); });
+    if (!esgotado) $$("[data-comprar]").forEach(function (a) { a.href = v.link; });
+    montar(v.id);
+    if (manual) {
+      evento("escolher cor #base-mate", { cor: v.nome });
+      try { var u = new URL(location.href); u.searchParams.set("cor", v.id); history.replaceState(null, "", u.href); } catch (e) {}
+    }
+  }
+  var rotulo = C.rotuloCor || "Cor";
+  $$("[data-cores]").forEach(function (caixa) {
+    if (cores.length < 2) { caixa.remove(); return; }
+    caixa.innerHTML = '<p class="cores-rotulo">' + rotulo + ': <b data-var="nome"></b></p><div class="cores-lista" role="group"></div>';
+    var lista = caixa.querySelector(".cores-lista");
+    lista.setAttribute("aria-label", "Escolha a " + rotulo.toLowerCase());
+    cores.forEach(function (v) {
+      var am = [].concat(v.amostra || "#cccccc");
+      var b = doc.createElement("button"); b.type = "button"; b.className = "cor-opcao"; b.setAttribute("data-id", v.id);
+      var bola = doc.createElement("span"); bola.className = "amostra";
+      bola.style.background = am.length > 1 ? "linear-gradient(135deg," + am[0] + " 50%," + am[1] + " 50%)" : am[0];
+      b.appendChild(bola); b.appendChild(doc.createTextNode(v.nome));
+      b.addEventListener("click", function () { escolher(v, true); });
+      lista.appendChild(b);
+    });
+  });
+  var pedida = (location.search.match(/[?&]cor=([\w-]+)/) || [])[1];
+  var inicial = cores.filter(function (v) { return v.id === pedida; })[0] ||
+    cores.filter(function (v) { return v.id === C.corInicial; })[0] || cores[0];
+  if (inicial) escolher(inicial, false); else montar(null);
 
   /* ---------- Animacao de entrada e eventos de leitura ---------- */
   var surge = $$(".surge");
